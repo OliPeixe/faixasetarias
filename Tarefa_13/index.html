@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Faixas Etárias</title>
+</head>
+<body>
+    <center>
+        <label for="n">Escreva a sua idade em anos:</label>
+        <input id="n" type="number" min="0">
+        <button onclick="compare()">Avaliar</button>
+        <p id="text"></p><br>
+        <p id="mega"></p>
+        <img id="img" src="" height="500vh">
+    </center>
+</body>
+<script>
+    function compare(){
+        var n = parseFloat(document.getElementById("n").value)
+        if (n<0){
+            document.getElementById("text").innerText="Insira uma idade válida."
+        } else if (n<=2) {
+            document.getElementById("text").innerText="Faixa Etária: Bebé"
+            document.getElementById("img").src="imagens/bebe.png"
+        } else if (n>2 && n<12){
+            document.getElementById("text").innerText="Faixa Etária: Criança"
+            document.getElementById("img").src="imagens/crianca.png"
+        } else if (n>=12 && n<=16){
+            document.getElementById("text").innerText="Faixa Etária: Adolescente"
+            document.getElementById("img").src="imagens/adulescente.png"
+        } else if (n>16 && n<18){
+            document.getElementById("text").innerText="Faixa Etária: Jovem Adulto"
+            document.getElementById("img").src="imagens/jovem.webp"
+        } else if (n>=18 && n<50){
+            document.getElementById("text").innerText="Faixa Etária: Adulto"
+            document.getElementById("img").src="imagens/adulto.png"
+        } else if (n>=50 && n<=65){
+            document.getElementById("text").innerText="Faixa Etária: Adulto de Meia Idade"
+            document.getElementById("img").src="imagens/idade_media.png"
+        } else if (n>65 && n<=100){
+            document.getElementById("text").innerText="Faixa Etária: Idoso"
+            document.getElementById("img").src="imagens/idoso.png"
+        } else if (n>100 && n<=130){
+            document.getElementById("text").innerText="Faixa Etária: Idoso e é LENDÁRIO!"
+            document.getElementById("img").src="imagens/lendario.png"
+        } else if (n>130 && n<1000){
+            document.getElementById("text").innerText="Faixa Etária: Idoso e é LENDÁRIO!"
+            document.getElementById("mega").innerText="Para além disso ainda é IMORTAL!!!"
+            document.getElementById("img").src="imagens/imortal.png"
+        } else if (n>=1000){
+            document.getElementById("text").innerText="Faixa Etária: Idoso e é LENDÁRIO!"
+            document.getElementById("mega").innerText="Para além disso ainda é IMORTAL!!! REALMENTE DEUS!!!!!!"
+            document.getElementById("img").src="imagens/omega.png"}
+    }
+</script>
+</html>
