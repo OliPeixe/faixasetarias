@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Faixas Etárias</title>
+    <style>
+        tr, td, table, th{
+            border-collapse:collapse;
+            text-align: center;
+            background-color: rgb(227, 227, 227);
+            border-color: black;
+            text-align: center;
+            align-items: center;
+        }
+        table{
+            width: 20%;
+            border-radius: 5px;
+        }
+        body{
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <center>
+        <table style="width: 95%; height: 90vh; ">
+            <tr>
+                <td style="width: 50%; background-color: azure;"><label for="n">Escreva a sua idade em anos:</label>
+                    <input id="n" type="number" min="0">
+                    <button onclick="compare()">Avaliar</button></td>
+                <td rowspan="2" style="background-color: azure;"><p id="text"></p><br>
+                    <p id="mega"></p>
+                    <img id="img" src="" height="500vh"></td>
+            </tr>
+            <tr>
+                <td style="background-color: azure;">
+                    <table border="" style="width: 75%;" >
+                    <tr>
+                        <th>Idade</th>
+                        <th>Faixa etária</th>
+                    </tr>
+                    <tr>
+                        <td>[0 ; 2]</td>
+                        <td>Bebé</td>
+                    </tr>
+                    <tr>
+                        <td>]2 ; 12[</td>
+                        <td>Crinaça</td>
+                    </tr>
+                    <tr>
+                        <td>[12 ; 16]</td>
+                        <td>Adolescente</td>
+                    </tr>
+                    <tr>
+                        <td>]16 ; 18[</td>
+                        <td>Jovem adulto</td>
+                    </tr>
+                    <tr>
+                        <td>[18 ; 50[</td>
+                        <td>Adulto</td>
+                    </tr>
+                    <tr>
+                        <td>[50 ; 65]</td>
+                        <td>Adulto de meia idade</td>
+                    </tr>
+                    <tr>
+                        <td>>65</td>
+                        <td>Idoso</td>
+                    </tr>
+                    <tr>
+                        <td>>100</td>
+                        <td>Lendáreo</td>
+                    </tr>
+                    <tr>
+                        <td>>130</td>
+                        <td>Imortal</td>
+                    </tr>
+                </table></td>
+            </tr>
+        </table>
+        
+    
+    
+    </center>
+</body>
+<script>
+    function compare(){
+        var n = parseFloat(document.getElementById("n").value)
+        if (n<0){
+            document.getElementById("text").innerText="Insira uma idade válida."
+        } else if (n<=2) {
+            document.getElementById("text").innerText="Faixa Etária: Bebé"
+            document.getElementById("img").src="imagens/bebe.png"
+            document.getElementById("mega").innerText=""
+        } else if (n>2 && n<12){
+            document.getElementById("text").innerText="Faixa Etária: Criança"
+            document.getElementById("img").src="imagens/crianca.png"
+            document.getElementById("mega").innerText=""
+        } else if (n>=12 && n<=16){
+            document.getElementById("text").innerText="Faixa Etária: Adolescente"
+            document.getElementById("img").src="imagens/adulescente.png"
+            document.getElementById("mega").innerText=""
+        } else if (n>16 && n<18){
+            document.getElementById("text").innerText="Faixa Etária: Jovem Adulto"
+            document.getElementById("img").src="imagens/jovem.webp"
+            document.getElementById("mega").innerText=""
+        } else if (n>=18 && n<50){
+            document.getElementById("text").innerText="Faixa Etária: Adulto"
+            document.getElementById("img").src="imagens/adulto.png"
+            document.getElementById("mega").innerText=""
+        } else if (n>=50 && n<=65){
+            document.getElementById("text").innerText="Faixa Etária: Adulto de Meia Idade"
+            document.getElementById("img").src="imagens/idade_media.png"
+            document.getElementById("mega").innerText=""
+        } else if (n>65 && n<=100){
+            document.getElementById("text").innerText="Faixa Etária: Idoso"
+            document.getElementById("img").src="imagens/idoso.png"
+            document.getElementById("mega").innerText=""
+        } else if (n>100 && n<=130){
+            document.getElementById("text").innerText="Faixa Etária: Idoso e é LENDÁRIO!"
+            document.getElementById("img").src="imagens/lendario.png"
+            document.getElementById("mega").innerText=""
+        } else if (n>130 && n<1000){
+            document.getElementById("text").innerText="Faixa Etária: Idoso e é LENDÁRIO!"
+            document.getElementById("mega").innerText="Para além disso ainda é IMORTAL!!!"
+            document.getElementById("img").src="imagens/imortal.png"
+        } else if (n>=1000){
+            document.getElementById("text").innerText="Faixa Etária: Idoso e é LENDÁRIO!"
+            document.getElementById("mega").innerText="Para além disso ainda é IMORTAL!!! REALMENTE DEUS!!!!!!"
+            document.getElementById("img").src="imagens/omega.png"}
+    }
+</script>
+</html>
